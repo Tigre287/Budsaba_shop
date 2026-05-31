@@ -1,0 +1,38 @@
+{
+  "shop_info": {
+    "name": "Budsaba Flower Shop",
+    "description": "Experience the beauty of nature with Budsaba Flower Shop. We provide hand-picked, fresh flowers delivered right to your doorstep.",
+    "about_title": "About Budsaba",
+    "about_description": "Founded on a passion for nature's most beautiful creations, Budsaba Flower Shop has been serving the community for over a decade. We believe that flowers are more than just a gift—they are a message of love, hope, and celebration."
+  },
+  "flowers": [
+    {
+      "id": 1,
+      "name": "Eternal Roses",
+      "price": "$45",
+      "image": "https://images.unsplash.com/photo-1548610762-7c6afe24c261?auto=format&fit=crop&q=80",
+      "category": "Popular"
+    },
+    {
+      "id": 2,
+      "name": "Spring Tulips",
+      "price": "$35",
+      "image": "https://images.unsplash.com/photo-1520323232475-01c27afc0531?auto=format&fit=crop&q=80",
+      "category": "Seasonal"
+    },
+    {
+      "id": 3,
+      "name": "Pure Lilies",
+      "price": "$40",
+      "image": "https://images.unsplash.com/photo-1502977249166-824b3a8a4d6d?auto=format&fit=crop&q=80",
+      "category": "New"
+    },
+    {
+      "id": 4,
+      "name": "Orchid Dream",
+      "price": "$55",
+      "image": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&q=80",
+      "category": "Luxury"
+    }
+  ]
+}
