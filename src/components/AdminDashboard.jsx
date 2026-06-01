@@ -29,7 +29,12 @@ export default function AdminDashboard() {
     const FILE_PATH = 'src/content.json';
 
     if (!TOKEN || TOKEN === 'YOUR_TOKEN_HERE') {
-      alert('Please set your VITE_GITHUB_TOKEN in the .env file first!');
+      alert('❌ Missing: VITE_GITHUB_TOKEN. Please add it to your Vercel Environment Variables and REDEPLOY.');
+      return;
+    }
+    
+    if (!REPO || REPO === 'YOUR_GITHUB_USERNAME/YOUR_REPO_NAME') {
+      alert('❌ Missing: VITE_GITHUB_REPO. Please add it to your Vercel Environment Variables and REDEPLOY.');
       return;
     }
 
