@@ -23,6 +23,9 @@ export default function AdminDashboard() {
   };
 
   const handleSave = async () => {
+    // Debugging: Log available environment keys (not values for security)
+    console.log('Available Env Keys:', Object.keys(import.meta.env).filter(key => key.startsWith('VITE_')));
+    
     const TOKEN = import.meta.env.VITE_GITHUB_TOKEN;
     const REPO = import.meta.env.VITE_GITHUB_REPO;
     const BRANCH = import.meta.env.VITE_GITHUB_BRANCH || 'main';
