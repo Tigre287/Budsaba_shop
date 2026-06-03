@@ -93,17 +93,29 @@ export default function AdminDashboard() {
       <div className="max-w-7xl mx-auto px-4 py-8">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-3xl font-bold text-gray-900">Admin Dashboard</h1>
-          <div className="bg-yellow-100 p-2 text-xs font-mono rounded">
-            DEBUG KEYS: {JSON.stringify(Object.keys(import.meta.env).filter(k => k.startsWith('VITE_')))}
+          
+          <div className="flex gap-4 items-center">
+            <div className="text-xs bg-white border border-gray-200 p-3 rounded-xl shadow-sm">
+              <p className="font-bold text-gray-400 uppercase text-[10px] mb-1">Connection Status</p>
+              <div className="flex gap-3">
+                <span className={`flex items-center gap-1 ${import.meta.env.VITE_GITHUB_TOKEN ? 'text-green-600' : 'text-red-500'}`}>
+                  ● Token: {import.meta.env.VITE_GITHUB_TOKEN ? 'OK' : 'MISSING'}
+                </span>
+                <span className={`flex items-center gap-1 ${import.meta.env.VITE_GITHUB_REPO ? 'text-green-600' : 'text-red-500'}`}>
+                  ● Repo: {import.meta.env.VITE_GITHUB_REPO ? 'OK' : 'MISSING'}
+                </span>
+              </div>
+            </div>
+            
+            <button 
+              onClick={handleSave}
+              disabled={status === 'saving'}
+              className="bg-floral-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-floral-700 flex items-center gap-2 disabled:opacity-50"
+            >
+              <Save className="h-5 w-5" /> 
+              {status === 'saving' ? 'Saving...' : 'Save Changes'}
+            </button>
           </div>
-          <button 
-            onClick={handleSave}
-            disabled={status === 'saving'}
-            className="bg-floral-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-floral-700 flex items-center gap-2 disabled:opacity-50"
-          >
-            <Save className="h-5 w-5" /> 
-            {status === 'saving' ? 'Saving to GitHub...' : 'Save Changes'}
-          </button>
         </div>
 
         <div className="flex gap-4 mb-8 border-b border-gray-200">
