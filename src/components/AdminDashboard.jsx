@@ -93,6 +93,9 @@ export default function AdminDashboard() {
       <div className="max-w-7xl mx-auto px-4 py-8">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-3xl font-bold text-gray-900">Admin Dashboard</h1>
+          <div className="bg-yellow-100 p-2 text-xs font-mono rounded">
+            DEBUG KEYS: {JSON.stringify(Object.keys(import.meta.env).filter(k => k.startsWith('VITE_')))}
+          </div>
           <button 
             onClick={handleSave}
             disabled={status === 'saving'}
